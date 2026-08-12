@@ -4,7 +4,7 @@
 
 ## Data Coverage
 
-- **Daily bars**: 499 (2024-09-03 → 2026-08-10)
+- **Daily bars**: 499 (2024-09-04 → 2026-08-11)
 - **Price range in sample**: 2471.82 – 5597.60
 - **H1 bars** (recent window): ~500 bars (mid-July → 11 Aug 2026)
 
@@ -36,6 +36,16 @@
 
 These pivots are the primary origins for longer-term Gann fans and Square of Nine work.
 
+## First Quantitative Result (Square of Nine)
+
+A formal touch-rate study has been completed:
+
+→ **[backtest/QUANT-SQ9-RESULTS.md](backtest/QUANT-SQ9-RESULTS.md)**
+
+**Headline number:** 50.4% of generated Square-of-Nine levels (within a practical distance band) were touched by price inside the following 25 daily bars.
+
+This is a baseline only. Next measurements will focus on *reversal quality*, confluence with angles, and regime filters.
+
 ## Day-Trading Progress
 
 See the companion document:
@@ -44,27 +54,27 @@ See the companion document:
 
 It contains the concrete day-trading ruleset (v0.1), observations on the recent expansion and reversal days, and the practical scaling used for 1×1 / 2×1 angles on Gold.
 
-## Code Tools Added
-
-A pure-Python helper module is now in the repository:
+## Code Tools
 
 ```
 tools/gann_utils.py
 ```
 
-It provides:
+Provides:
+- `square_of_nine_levels(origin, steps=8)`
+- `gann_angle_price(...)`
+- Rising / falling angle helpers
 
-- `square_of_nine_levels(origin, steps=8)` — practical Square of Nine projections
-- `gann_angle_price(...)` — project any common Gann angle forward/backward
-- Convenience wrappers for rising angles from a low and falling angles from a high
+## Current Status & Next Work
 
-These functions are the foundation for the next quantitative layer (bar-by-bar angle tracking and hit-rate measurement).
-
-## Immediate Next Work
-
-1. Use `gann_utils.py` against the 499 daily bars to measure how often price reacted at projected Square-of-Nine levels and key angles from the major swings listed above.
-2. Expand the H1 day-trading sample and compute exact R-multiples for the v0.1 ruleset.
-3. Add a simple volatility filter (ATR regime) so angle strategies are not forced to fight expansion days.
+- [x] Multi-year daily data pulled
+- [x] Major swings mapped
+- [x] Core Gann utility functions written
+- [x] First quantitative Sq9 touch-rate baseline
+- [ ] Reversal-quality scoring (not just touch)
+- [ ] Gann angle hit-rate measurement
+- [ ] ATR regime filter
+- [ ] Full H1 day-trading ruleset backtest with R-multiples
 
 ---
 
