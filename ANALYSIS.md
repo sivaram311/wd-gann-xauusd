@@ -1,40 +1,36 @@
-# XAUUSD Gann Analysis — Longer-Term Swing Map & Progress
+# XAUUSD Gann Analysis — Progress Dashboard
 
 **Last updated:** 2026-08-12
 
-## Data Coverage
-
-- **Daily bars**: 499 (2024-09-04 → 2026-08-11)
-- **Price range in sample**: 2471.82 – 5597.60
-- **H1 bars** (recent window): ~500 bars (mid-July → 11 Aug 2026)
-
-## Quantitative Results So Far
+## Quantitative Results Summary
 
 | Study | File | Key Finding |
 |-------|------|-------------|
-| Sq9 Touch Rate | [QUANT-SQ9-RESULTS.md](backtest/QUANT-SQ9-RESULTS.md) | ~50% of levels touched within 25 bars |
+| Sq9 Touch Rate | [QUANT-SQ9-RESULTS.md](backtest/QUANT-SQ9-RESULTS.md) | ~50% of levels touched within 25 days |
 | Reversal Quality + Angles | [QUANT-REVERSAL-AND-ANGLES.md](backtest/QUANT-REVERSAL-AND-ANGLES.md) | ~80% of touched Sq9 levels reversed ≥30 pts |
-| **Confluence** | [QUANT-CONFLUENCE.md](backtest/QUANT-CONFLUENCE.md) | 114 confluence events; high reversal rate preserved while filtering signal count |
+| Confluence (Sq9+Angle) | [QUANT-CONFLUENCE.md](backtest/QUANT-CONFLUENCE.md) | Filters signals while preserving high reaction rate |
+| **H1 Day-Trading Backtest** | [H1-DAYTRADING-BACKTEST.md](backtest/H1-DAYTRADING-BACKTEST.md) | **27 trades, 37% win rate, +0.89 R expectancy** |
 
-## Day-Trading Progress
+## Day-Trading Ruleset
 
-→ **[BACKTEST-DAY-TRADING.md](BACKTEST-DAY-TRADING.md)** (v0.1 ruleset)
+→ [BACKTEST-DAY-TRADING.md](BACKTEST-DAY-TRADING.md)
 
-## Code Tools
+## Code
 
-`tools/gann_utils.py` — Square of Nine + scaled angle projection helpers.
+`tools/gann_utils.py`
 
 ## Status Checklist
 
-- [x] Multi-year daily data pulled
-- [x] Major swings mapped
-- [x] Core Gann utility functions written
+- [x] Multi-year daily data + major swings
+- [x] Core Gann utility functions
 - [x] Sq9 touch-rate baseline
 - [x] Reversal-quality scoring
-- [x] First Gann angle hit-rate measurement
-- [x] Confluence scoring (Sq9 + Angle)
+- [x] Gann angle hit-rate (Daily)
+- [x] Confluence scoring
+- [x] **First H1 day-trading quantitative backtest**
+- [ ] Sq9 + time-cycle filters on the H1 ruleset
 - [ ] ATR regime filter
-- [ ] Full H1 day-trading ruleset backtest with R-multiples
+- [ ] Longer H1 history + out-of-sample test
 
 ---
 
