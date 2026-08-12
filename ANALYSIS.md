@@ -34,45 +34,32 @@
 | 2026-07-17 | 3959.50 |
 | 2026-07-29 | 3995.71 |
 
-These pivots are the primary origins for longer-term Gann fans and Square of Nine work.
+## Quantitative Results So Far
 
-## First Quantitative Result (Square of Nine)
+1. **Touch rate (Sq9)** → [QUANT-SQ9-RESULTS.md](backtest/QUANT-SQ9-RESULTS.md)  
+   ~50.4% of levels touched within 25 bars.
 
-A formal touch-rate study has been completed:
-
-→ **[backtest/QUANT-SQ9-RESULTS.md](backtest/QUANT-SQ9-RESULTS.md)**
-
-**Headline number:** 50.4% of generated Square-of-Nine levels (within a practical distance band) were touched by price inside the following 25 daily bars.
-
-This is a baseline only. Next measurements will focus on *reversal quality*, confluence with angles, and regime filters.
+2. **Reversal quality + Angles** → [QUANT-REVERSAL-AND-ANGLES.md](backtest/QUANT-REVERSAL-AND-ANGLES.md)  
+   - When a Sq9 level is touched, it reverses ≥30 points in the expected direction **~80.6%** of the time.  
+   - First Gann angle hit-rates on Daily (1×1 / 2×1) are lower (7–15%), as expected for a moving target.
 
 ## Day-Trading Progress
 
-See the companion document:
-
-→ **[BACKTEST-DAY-TRADING.md](BACKTEST-DAY-TRADING.md)**
-
-It contains the concrete day-trading ruleset (v0.1), observations on the recent expansion and reversal days, and the practical scaling used for 1×1 / 2×1 angles on Gold.
+→ **[BACKTEST-DAY-TRADING.md](BACKTEST-DAY-TRADING.md)** (v0.1 ruleset)
 
 ## Code Tools
 
-```
-tools/gann_utils.py
-```
+`tools/gann_utils.py` — Square of Nine + scaled angle projection helpers.
 
-Provides:
-- `square_of_nine_levels(origin, steps=8)`
-- `gann_angle_price(...)`
-- Rising / falling angle helpers
-
-## Current Status & Next Work
+## Status Checklist
 
 - [x] Multi-year daily data pulled
 - [x] Major swings mapped
 - [x] Core Gann utility functions written
-- [x] First quantitative Sq9 touch-rate baseline
-- [ ] Reversal-quality scoring (not just touch)
-- [ ] Gann angle hit-rate measurement
+- [x] Sq9 touch-rate baseline
+- [x] Reversal-quality scoring
+- [x] First Gann angle hit-rate measurement
+- [ ] Confluence scoring (Sq9 + Angle)
 - [ ] ATR regime filter
 - [ ] Full H1 day-trading ruleset backtest with R-multiples
 
